@@ -1,4 +1,4 @@
-# StockWeiser
+# [StockWeiser](https://wilsonwu738.github.io/StockWeiser/)
 
 StockWeiser is a data visualization web app which allows the users to search and analyze stocks of their interests. We are at an era where too much information is available. Here we aim to provide the basic/core financial data for retail investors. 
 
