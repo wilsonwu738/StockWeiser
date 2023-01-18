@@ -6,13 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
-    <script src="./dist/main.js" defer></script>
+    <script src="./dist/main.js"></script>
     <title>StockWeiser</title>
   </head>
 
   <body>
+    <h1>Welcome to StockWeiser!</h1>
     <div id="root"></div>
     <div id="last_quote"></div>
+    <form id="stockForm"> 
+      <input type="radio" id="option1" name="tickers" value="TSLA">
+      <label for="option1">Tesla</label>
+      
+      <input type="radio" id="option2" name="tickers" value="AAPL">
+      <label for="option2">Apple</label>
+      
+      <input type="radio" id="option3" name="tickers" value="AMZN">
+      <label for="option3">Amazon</label>
+
+      <input type="radio" id="option3" name="tickers" value="GOOGL">
+      <label for="option3">Alphabet Class A</label>
+
+      <input type="radio" id="option3" name="tickers" value="SSREY">
+      <label for="option3">Swiss Re</label>
+
+      <input type="radio" id="option3" name="tickers" value="NVDA">
+      <label for="option3">NVDIA</label>
+
+      <input type="radio" id="option3" name="tickers" value="TDOC">
+      <label for="option3">Teledoc</label>
+
+      <input type="radio" id="option3" name="tickers" value="U">
+      <label for="option3">Unity</label>
+
+      <input type="radio" id="option3" name="tickers" value="GME">
+      <label for="option3">GameStop</label>
+
+      <input type="radio" id="option3" name="tickers" value="AMC">
+      <label for="option3">AMC</label>
+      <br>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
   </body>
 
 
