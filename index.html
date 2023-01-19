@@ -9,12 +9,26 @@
     <script src="./dist/main.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
+    <script
+      src="https://kit.fontawesome.com/8f8e6fbefd.js"
+      crossorigin="anonymous"
+    ></script>
+   
     <title>StockWeiser</title>
   </head>
 
   <body>
+    <a href="https://www.linkedin.com/in/wilsonwu738/">
+      <i class="fa-brands fa-linkedin"></i>
+    </a>
+
+    <a href="https://github.com/wilsonwu738/StockWeiser">
+      <i class="fa-brands fa-github"></i>
+    </a>
+  
     <h1>StockWeiser</h1>
-    <h2>Please pick one below</h2>
+    <h2>Please pick one below, company information will be shown</h2>
     
     <form id="stockForm"> 
       <input type="radio" id="option1" name="tickers" value="TSLA">
@@ -51,8 +65,11 @@
       <input type="submit" value="Submit">
     </form>
 
-    <div>Latest Price</div>
+    <br>
+
+    <div>Price:</div>
     <div id="last_quote"></div>
+    
 
     <br>
 
@@ -74,7 +91,7 @@
     <div>PE Ratio</div>
     <div id="peRatio"></div>
 
-    <!-- <svg width="1000" height="400"></svg> -->
+    
     
     
     <canvas id="myChart"></canvas>

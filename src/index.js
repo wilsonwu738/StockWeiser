@@ -1,8 +1,9 @@
-const csvtojson = require('csvtojson');
-import Example from './scripts/example';
-import LineChart from './scripts/hist_price_chart';
-import * as d3 from "d3"
+// const csvtojson = require('csvtojson');
+// import Example from './scripts/example';
+// import LineChart from './scripts/hist_price_chart';
+// import * as d3 from "d3"
 import Chart from 'chart.js/auto';
+
 document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -78,11 +79,7 @@ function lineChart(dArr, pArr) {
     if (chartStatus != undefined) {
       chartStatus.destroy();
     }
-  // let myChart = document.getElementById('myChart')
-  //   if (myChart.context) {
-  //     myChart.destroy()
-  //   }
-  
+ 
   var ctx = document.getElementById('myChart').getContext('2d')
   // let cleanVanvas = canvas.clearRect(0, 0, 200, 100);
   // let ctx = document.getElementById('myChart').getContext('2d') 
