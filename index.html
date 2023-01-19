@@ -7,13 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
     <title>StockWeiser</title>
   </head>
 
   <body>
-    <h1>Welcome to StockWeiser!</h1>
-    <div id="root"></div>
-    <div id="last_quote"></div>
+    <h1>StockWeiser</h1>
+    <h2>Please pick one below</h2>
+    
     <form id="stockForm"> 
       <input type="radio" id="option1" name="tickers" value="TSLA">
       <label for="option1">Tesla</label>
@@ -27,8 +28,8 @@
       <input type="radio" id="option3" name="tickers" value="GOOGL">
       <label for="option3">Alphabet Class A</label>
 
-      <input type="radio" id="option3" name="tickers" value="SSREY">
-      <label for="option3">Swiss Re</label>
+      <input type="radio" id="option3" name="tickers" value="PLTR">
+      <label for="option3">Palantir tech</label>
 
       <input type="radio" id="option3" name="tickers" value="NVDA">
       <label for="option3">NVDIA</label>
@@ -48,6 +49,35 @@
       <br>
       <input type="submit" value="Submit">
     </form>
+
+    <div>Latest Price</div>
+    <div id="last_quote"></div>
+
+    <br>
+
+    <div>Company Profile</div>
+    <div id="companyDescription"></div>
+
+    <br>
+
+    <div>52 Week High</div>
+    <div id="fiftytwoHigh"></div>
+
+    <br>
+
+    <div>52 Week Low</div>
+    <div id="fiftytwoLow"></div>
+
+    <br>
+
+    <div>PE Ratio</div>
+    <div id="peRatio"></div>
+
+    <svg width="1000" height="400"></svg>
+    
+    <div id="my_dataviz"></div>
+
+    
   </body>
 
 
