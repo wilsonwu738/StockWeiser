@@ -13,12 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(res => res.json())
       .then(data => { 
         // console.log(data)
+        
         let stockData = data["Monthly Time Series"]["2023-01-18"]["4. close"]
+        console.log(stockData)
         document.querySelector("#last_quote").innerText = stockData
         let obj = data["Monthly Time Series"]
         
         let result = Object.entries(obj)    //turn data into 2D array
-        // console.log(result)
+        console.log(result)
         let dateArr = [];
         let priceArr = [];
         for (let i = 0; i < result.length; i++) {
@@ -26,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
           priceArr.push(result[i][1]["4. close"]);
         };
 
-        
         let graph = lineChart(dateArr.reverse(), priceArr.reverse());
 
         let newResult = result.map((ele) => [ele[0], Number(ele[1]["4. close"])]) //2D array data for d3
@@ -67,6 +68,58 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 
+
+
+
+
+function lineChart(dArr, pArr) {
+  
+  let chartStatus = Chart.getChart("myChart");
+    if (chartStatus != undefined) {
+      chartStatus.destroy();
+    }
+  // let myChart = document.getElementById('myChart')
+  //   if (myChart.context) {
+  //     myChart.destroy()
+  //   }
+  
+  var ctx = document.getElementById('myChart').getContext('2d')
+  // let cleanVanvas = canvas.clearRect(0, 0, 200, 100);
+  // let ctx = document.getElementById('myChart').getContext('2d') 
+  var chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+          labels: dArr, // array of dates to use as x-axis labels
+          datasets: [{
+              label: 'Historical Price',
+              data: pArr, // array of data points to plot on the chart
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1
+          }]
+      },
+      options: {
+          // scales: {
+          //     x: {
+          //         type: 'time', // set the x-axis to use time scale
+          //         time: {
+          //             parser: 'YYYY-MM-DD', // set the format of the date labels
+          //             unit: 'day',
+          //             stepSize: 1,
+          //             displayFormats: {
+          //                 'day': 'MM/DD/YYYY'
+          //             }
+          //         }
+          //     },
+          //     y: {
+          //         beginAtZero: true
+          //     }
+          // }
+      }
+  });
+
+
+}
 
 
 
@@ -150,48 +203,3 @@ document.addEventListener("DOMContentLoaded", () => {
 //     .style("stroke", "#CC0000")
 //     .style("stroke-width", "2");
 // }
-
-
-function lineChart(dArr, pArr) {
-  let myChart = document.getElementById('myChart')
-    if (myChart.context) {
-      myChart.destroy()
-    }
-  
-  var ctx = document.getElementById('myChart').getContext('2d')
-  // let cleanVanvas = canvas.clearRect(0, 0, 200, 100);
-  // let ctx = document.getElementById('myChart').getContext('2d') 
-  var chart = new Chart(ctx, {
-      type: 'line',
-      data: {
-          labels: dArr, // array of dates to use as x-axis labels
-          datasets: [{
-              label: 'Historical Price',
-              data: pArr, // array of data points to plot on the chart
-              backgroundColor: 'rgba(255, 99, 132, 0.2)',
-              borderColor: 'rgba(255, 99, 132, 1)',
-              borderWidth: 1
-          }]
-      },
-      options: {
-          // scales: {
-          //     x: {
-          //         type: 'time', // set the x-axis to use time scale
-          //         time: {
-          //             parser: 'YYYY-MM-DD', // set the format of the date labels
-          //             unit: 'day',
-          //             stepSize: 1,
-          //             displayFormats: {
-          //                 'day': 'MM/DD/YYYY'
-          //             }
-          //         }
-          //     },
-          //     y: {
-          //         beginAtZero: true
-          //     }
-          // }
-      }
-  });
-
-
-}
