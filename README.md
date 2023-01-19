@@ -7,7 +7,7 @@ Full disclaimer, this web page is not meant for any investment advice. This is s
 
 ## Wireframe
 
-![StockWiser wireframe](./assets/images/wireframe.png)
+![StockWiser wireframe](./assets/images/wireframe_2.png)
 
 ## Functionality & MVPs
   - Input stock name or ticker in the search box, information will be fetched from the API and company context information will be printed. 
@@ -32,3 +32,7 @@ Full disclaimer, this web page is not meant for any investment advice. This is s
   - Tuesday: Focus on the UI interaction to make sure the web page respond appropriate to users actions. 
   - Wednesday: Heavy CSS day for styling and any final touch for the logic or UI.
   - Thursday Morning: Final testing and deploy.
+
+## Future Implementation
+  - allow the user to search stocks in a search field and select multiple stocks
+  - the chart will update to show the prices for the stocks selected

@@ -9,19 +9,18 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const stockPick = document.querySelector('input[name="tickers"]:checked').value
 
-    let priceUrl = `https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=${stockPick}&apikey=N7AW4I5CEJEADDLD`;
+    let priceUrl = `https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY&symbol=${stockPick}&apikey=N7AW4I5CEJEADDLD`; //for price info
     fetch(priceUrl)
       .then(res => res.json())
       .then(data => { 
         // console.log(data)
-        
-        let stockData = data["Monthly Time Series"]["2023-01-18"]["4. close"]
-        console.log(stockData)
+        let stockData = data["Monthly Time Series"]["2023-01-18"]["4. close"]   //pick out a single price
+        // console.log(stockData)
         document.querySelector("#last_quote").innerText = stockData
         let obj = data["Monthly Time Series"]
         
         let result = Object.entries(obj)    //turn data into 2D array
-        console.log(result)
+        // console.log(result)
         let dateArr = [];
         let priceArr = [];
         for (let i = 0; i < result.length; i++) {
@@ -37,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     
 
-    let infoUrl = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${stockPick}&apikey=N7AW4I5CEJEADDLD`;
+    let infoUrl = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${stockPick}&apikey=N7AW4I5CEJEADDLD`; //for non price info
     fetch(infoUrl)
       .then(res => res.json())
       .then(data => { 
@@ -95,25 +94,26 @@ function lineChart(dArr, pArr) {
               borderWidth: 1
           }]
       },
-      options: {
-          // scales: {
-          //     x: {
-          //         type: 'time', // set the x-axis to use time scale
-          //         time: {
-          //             parser: 'YYYY-MM-DD', // set the format of the date labels
-          //             unit: 'day',
-          //             stepSize: 1,
-          //             displayFormats: {
-          //                 'day': 'MM/DD/YYYY'
-          //             }
-          //         }
-          //     },
-          //     y: {
-          //         beginAtZero: true
-          //     }
-          // }
-      }
+      // options: {
+      //     scales: {
+      //         x: {
+      //             type: 'time', // set the x-axis to use time scale
+      //             time: {
+      //                 parser: 'YYYY-MM-DD', // set the format of the date labels
+      //                 unit: 'day',
+      //                 stepSize: 1,
+      //                 displayFormats: {
+      //                     'day': 'MM/DD/YYYY'
+      //                 }
+      //             }
+      //         },
+      //         y: {
+      //             beginAtZero: true
+      //         }
+      //     }
+      // }
   });
+
 
 
 }

@@ -11,3 +11,13 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   color: darkgreen;
 }
+
+input[type=radio]:checked {
+  background-color: blanchedalmond;
+}
+
+#price, #last_quote {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
