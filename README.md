@@ -12,9 +12,7 @@ Full disclaimer, this web page is not meant for any investment advice. This is s
 ## Functionality & MVPs
   - Input stock name or ticker in the search box, information will be fetched from the API and company context information will be printed. 
   - Charts about historical price movement about the stock will be rendered 
-  - Lists of stocks with large movement in the day will show up on lower left of the page.
-  - Social sentinent ranking about the stocks will be shown.
-  - List of stocks in similar sector will be shown. 
+
 ### In addition, this project will include:
   - An instruction note section will be include to explain a few key terms about the data we show. Such as PE ratio (aka price to earning ratio). 
   - this README page. 
