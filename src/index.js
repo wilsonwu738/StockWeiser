@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(res => res.json())
       .then(data => { 
         // console.log(data)
-        let stockData = data["Monthly Time Series"]["2023-01-18"]["4. close"]   //pick out a single price
+        let stockData = data["Monthly Time Series"]["2022-12-30"]["4. close"]   //pick out a single price
         // console.log(stockData)
         document.querySelector("#last_quote").innerText = stockData
         let obj = data["Monthly Time Series"]
